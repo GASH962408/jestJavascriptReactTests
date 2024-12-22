@@ -17,3 +17,22 @@ test('object assignment', () => {
     expect(value).toEqual(4);
   });
   
+
+  test('adding floating point numbers', () => {
+    const value = 0.1 + 0.2;
+    // Esto no funcionaría porque hay errores de redondeo
+    // expect(value).toBe(0.3);
+  
+    // Esto sí funciona
+    expect(value).toBeCloseTo(0.3); // Tolerancia para errores de redondeo
+  });
+  
+
+  test('there is no I in team', () => {
+    expect('team').not.toMatch(/I/); // No debe encontrar "I" en "team"
+  });
+  
+  test('but there is a "stop" in Christoph', () => {
+    expect('Christoph').toMatch(/stop/); // Encuentra "stop" en "Christoph"
+  });
+  
