@@ -22,7 +22,6 @@ test('object assignment', () => {
     const value = 0.1 + 0.2;
     // Esto no funcionaría porque hay errores de redondeo
     // expect(value).toBe(0.3);
-  
     // Esto sí funciona
     expect(value).toBeCloseTo(0.3); // Tolerancia para errores de redondeo
   });
@@ -34,5 +33,18 @@ test('object assignment', () => {
   
   test('but there is a "stop" in Christoph', () => {
     expect('Christoph').toMatch(/stop/); // Encuentra "stop" en "Christoph"
+  });
+  
+  const shoppingList = [
+    'diapers',
+    'kleenex',
+    'trash bags',
+    'paper towels',
+    'milk',
+  ];
+  
+  test('the shopping list has milk on it', () => {
+    expect(shoppingList).toContain('milk'); // Verifica que "milk" está en el arreglo
+    expect(new Set(shoppingList)).toContain('milk'); // Verifica en un Set
   });
   
